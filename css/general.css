@@ -1,0 +1,97 @@
+.container {
+    /* 1140px */
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+
+    /* margin-bottom: 9.6rem; */
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+.heading-secondary {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: "poppins", sans-serif;
+    letter-spacing: -0.5px;
+    margin-bottom: 2.2rem;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 1.4rem 0;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-block;
+
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.4rem 3.2rem;
+
+
+    /* Only necessary for .btn */
+    cursor: pointer;
+    font-family: inherit;
+    position: relative;
+    background: var(--primary-color);
+    color: var(--white);
+    z-index: 1;
+    border: 1px solid var(--primary-color);
+    /* Put transition on original "state" */
+    /* transition: background-color 0.3s; */
+    transition: all 0.3s;
+}
+
+.btn:is(:hover, :focus) {
+    background: #333;
+    color: #333;
+    border-color: #333;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    transition: 0.25s ease;
+    z-index: -1;
+}
+
+.btn:is(:hover, :focus)::before {
+    width: 100%;
+}
